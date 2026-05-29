@@ -1,5 +1,6 @@
-from .connection import engine
+from .connection import engine,SessionLocal
 
 __all__ = [
-    'engine'
+    'engine',
+    'SessionLocal'
 ]

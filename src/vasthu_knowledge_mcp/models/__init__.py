@@ -1,5 +1,21 @@
-from .schema import Base
+from .schema import (
+    Base,
+    Direction,
+    Room,
+    IndexEntry,
+    Page,
+    RuleMapping,
+    Rule,
+    Consequence,
+)
 
 __all__ = [
-    'Base'
+    "Base",
+    "Direction",
+    "Room",
+    "IndexEntry",
+    "Page",
+    "RuleMapping",
+    "Rule",
+    "Consequence",
 ]
