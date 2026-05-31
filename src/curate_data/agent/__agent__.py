@@ -3,7 +3,7 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 # from langchain_core.messages import SystemMessage, HumanMessage
 from langchain.agents import create_agent
 from langchain_openai import ChatOpenAI
-from src.curate_data import config
+from src.curate_data.read_config import config
 from langchain_mcp_adapters.sessions import StreamableHttpConnection
 
 client = MultiServerMCPClient(

@@ -18,7 +18,7 @@ def main():
             print("Starting the server...")
             mcp_run()
         case "curate":
-            curate_main()
+            asyncio.run(curate_main())
         case "test_agent":
             asyncio.run(test_agent())
         case _:
