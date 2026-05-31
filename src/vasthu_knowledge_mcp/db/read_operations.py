@@ -8,6 +8,7 @@ from src.vasthu_knowledge_mcp.models import (
     IndexEntry,
     RuleMapping
 )
+from typing import Optional
 
 
 def get_index():
@@ -15,10 +16,16 @@ def get_index():
     with SessionLocal() as session:
         return session.query(IndexEntry).all()
     
-def get_rules_by_room_and_direction(room_id:int,direction_id:int):
-    # get_rules_by_room_and_direction(room_id, direction_id)
+def get_rules_by_room_and_direction(
+    room_id: Optional[int] = None, direction_id: Optional[int] = None
+):
     with SessionLocal() as session:
-        return session.query(RuleMapping).filter(RuleMapping.room_id == room_id , RuleMapping.direction_id == direction_id).all()
+        query = session.query(RuleMapping)
+        if room_id is not None:
+            query = query.filter(RuleMapping.room_id == room_id)
+        if direction_id is not None:
+            query = query.filter(RuleMapping.direction_id == direction_id)
+        return query.all()
     
 def get_page_summary(page_num:int):
     # get_page_summary(page_num)

@@ -1,0 +1,9 @@
+books_path: "src/curate_data/books_to_read"
+vasthu_mcp_tools_url: "http://localhost:7001/mcp"
+
+local_ai:
+  openai_chat:
+    base_url: "http://localhost:1234/v1"
+    api_key: "not-needed"
+    model: "google/gemma-4-e4b"
+    reasoning_effort: "high"
